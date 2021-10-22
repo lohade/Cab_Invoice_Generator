@@ -22,7 +22,8 @@ public class MainTest {
                 new RideDetails(0.9,3),
                 new RideDetails(2.0,7),
         };
-        double res=invoice.calculateTotalFare(ride);
-        Assert.assertEquals(39.0,res,0.0);
+        CabInvoiceData res=invoice.calculateTotalFare(ride);
+        CabInvoiceData expected=  new CabInvoiceData(2,39.0);
+        Assert.assertEquals(res,expected);
     }
 }
