@@ -1,7 +1,10 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Scanner;
+
 public class MainTest {
+    Scanner scanner;
     CabInvoice invoice=new CabInvoice();
 
     @Test
@@ -25,5 +28,13 @@ public class MainTest {
         CabInvoiceData res=invoice.calculateTotalFare(ride);
         CabInvoiceData expected=  new CabInvoiceData(2,39.0);
         Assert.assertEquals(res,expected);
+    }
+
+    @Test
+    public void whenEnterMultipleUser_returnFare(){
+
+        CabInvoiceData cabInvoiceData= invoice.detailsCab(2);
+        CabInvoiceData cabInvoiceData1=new CabInvoiceData(3,30);
+        Assert.assertEquals(cabInvoiceData1.getInvoice(),cabInvoiceData.getInvoice());
     }
 }

@@ -2,14 +2,20 @@ import java.util.Objects;
 
 public class CabInvoiceData {
 
-    private final int TOTAL_RIDE;
-    private final double TOTAL_FARE;
-    private final double AVERAGE_FARE;
+    int TOTAL_RIDE;
+    double TOTAL_FARE;
+    double AVERAGE_FARE;
 
     public CabInvoiceData(int total_ride,double total_fare){
         this.TOTAL_RIDE=total_ride;
         this.TOTAL_FARE=total_fare;
+
+    }
+
+    public CabInvoiceData getInvoice(){
         this.AVERAGE_FARE=this.TOTAL_FARE/this.TOTAL_RIDE;
+        return this;
+
     }
 
 
